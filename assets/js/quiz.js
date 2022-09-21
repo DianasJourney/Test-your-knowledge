@@ -1,19 +1,22 @@
 // declared variables
-const startButton = document.getElementById('play');
-const quizSecEl = document.getElementsByClassName('questions');
-const infoSection = document.getElementById('infobox');
-const timerEl = document.getElementById('timerbox');
+const startButton = document.getElementById('play')
+const quizSecEl = document.getElementsByClassName('questions')
+const infoSection = document.getElementById('infobox')
+const timerEl = document.getElementById('timerbox')
 let timerCounter = document.getElementsByClassName('timersec')[0]
 const scoreEl = document.getElementsByClassName('score')[1]
-let points = document.querySelector('#points');
-let incorrectText = document.querySelectorAll('.incorrect');
-const gameOver = document.getElementById('GG');
-const formInput = document.getElementById('form');
-
-
-
+let points = document.querySelector('#points')
+let incorrectText = document.querySelectorAll('.incorrect')
+const gameOver = document.getElementById('GG')
+const formInput = document.getElementById('form')
+const highscore = document.getElementById('highscore')
+const output = document.getElementById('output')
+const restartButton = document.getElementById('playAgain')
 
 startButton.addEventListener('click', play)
+formInput.addEventListener('submit', submitScore)
+restartButton.addEventListener('click', restart)
+
 let score = 0
 let time = 25
 let intervalId
@@ -26,6 +29,7 @@ function play () {
   timerEl.setAttribute('style', 'display: block')
   intervalId = setInterval(timerCountDown, 1000)
 }
+
 // once the user clicks an answer this function will check the answer to see if it is true or false then adds a point
 // if correct and subtract time if incorrect
 function checkAnswers (event) {
@@ -48,11 +52,11 @@ function checkAnswers (event) {
       quizSecEl[nextQuestion].setAttribute('style', 'display: block')
       incorrectText[nextQuestion].setAttribute('style', 'display: block')
     }
-//once 5 questions have cycled they game will come to an end displaying the submit form aswell as the total score
+    //once 5 questions have cycled they game will come to an end displaying the submit form aswell as the total score
     if (nextQuestion === 5) {
       timerEl.setAttribute('style', 'display: none')
       gameOver.setAttribute('style', 'display: block')
-      scoreEl.innerHTML = 'You got ' + score + "/5 questions correct!";
+      scoreEl.innerHTML = 'You got ' + score + '/5 questions correct!'
       formInput.setAttribute('style', 'display: block')
     }
   }, 1000)
@@ -70,4 +74,31 @@ function timerCountDown () {
     clearInterval(intervalId)
   }
 }
+//submit info to highscores
+function submitScore (event) {
+  event.preventDefault()
+  let initials = event.target[0].value
+  // 1. AB - 22
+  console.log(initials)
+  let scoreText = localStorage.length + 1 + '. ' + initials + ' - ' + score
+  localStorage.setItem(localStorage.length, scoreText)
 
+  highscore.setAttribute('style', 'display: flex')
+  let scores = ''
+  for (let i = 0; i < localStorage.length; i++) {
+    scores += localStorage.getItem(i) + '\n'
+  }
+  output.innerHTML = scores
+  event.target[0].value = ''
+  formInput.setAttribute('style', 'display: none')
+  gameOver.setAttribute('style', 'display: none')
+}
+//restarts the game 
+function restart () {
+  highscore.setAttribute('style', 'display: none')
+  infoSection.setAttribute('style', 'display: block')
+  score = 0
+  time = 25
+  nextQuestion = 0
+  points.textContent = score
+}

@@ -24,13 +24,13 @@
     </div>
     <!--Questions Section-->
     <header id="timerbox">
-      <div class="score">Score: <span id="points"></span></div>
+      <div class="score">Score: <span id="points">0</span></div>
       <div class="timer">
         <div class="timertext">Time Left:</div>
         <div class="timersec">25</div>
       </div>
     </header>
-<!-- first question-->
+    <!-- first question-->
     <div class="questions">
       <div class="optionlist">
         <div class="titleq">What does HTML stand for?</div>
@@ -51,8 +51,8 @@
         <span class="incorrect"></span>
       </footer>
     </div>
-<!-- second question-->
- <div class="questions">
+    <!-- second question-->
+    <div class="questions">
       <div class="optionlist">
         <div class="titleq">What does CSS stand for?</div>
         <div class="option" onclick="checkAnswers(event)" data-correct="true">
@@ -72,7 +72,7 @@
         <span class="incorrect"></span>
       </footer>
     </div>
-<!--third questions-->
+    <!--third questions-->
     <div class="questions">
       <div class="optionlist">
         <div class="titleq">What does JS stand for?</div>
@@ -93,7 +93,7 @@
         <span class="incorrect"></span>
       </footer>
     </div>
-<!-- 4th question-->
+    <!-- 4th question-->
     <div class="questions">
       <div class="optionlist">
         <div class="titleq">Which one is not a data-type in JS?</div>
@@ -115,14 +115,14 @@
       </footer>
     </div>
     <!-- this is the last series of question-->
-     <div class="questions">
+    <div class="questions">
       <div class="optionlist">
         <div class="titleq">How do you change a font color in CSS?</div>
         <div class="option" onclick="checkAnswers(event)" data-correct="false">
-          1. font: 
+          1. font:
         </div>
         <div class="option" onclick="checkAnswers(event)" data-correct="false">
-          2. font-family: 
+          2. font-family:
         </div>
         <div class="option" onclick="checkAnswers(event)" data-correct="true">
           3. color:
@@ -135,14 +135,26 @@
         <span class="incorrect"></span>
       </footer>
     </div>
-<!-- highscore submit forms-->
-    <div id="GG">Game Over!!!
-        <span class="score">You got:  correct!</span>
+    <!-- highscore submit forms-->
+    <div id="GG">
+      Game Over!!!
+      <span class="score">You got: correct!</span>
     </div>
-    <div id="form">
-        <label for="fname">Add yourself into HighScores:</label><br>
-        <input type="text" id="fname" name="fname" value="Name"><br>
-        <input type="submit" value="Submit">
+    <form id="form">
+      <label for="fname">Add yourself into HighScores:</label><br />
+      <input
+        type="text"
+        id="fname"
+        name="fname"
+        placeholder="Enter your initials..."
+      /><br />
+      <input type="submit" value="Submit" />
+    </form>
+<!--highscore list-->
+    <div id="highscore">
+      <h2>Highscores</h2>
+      <div id="output"></div>
+      <button id="playAgain">Go back</button>
     </div>
     <script src="./assets/js/quiz.js"></script>
   </body>
