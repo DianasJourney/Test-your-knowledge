@@ -37,12 +37,10 @@ function play () {
 // if correct and subtract time if incorrect
 function checkAnswers (event) {
   if (event.target.getAttribute('data-correct') === 'true') {
-    console.log('answer is correct');
     score += 1;
     points.textContent = score;
     incorrectText[nextQuestion].textContent = 'correct';
   } else {
-    console.log('answer is wrong');
     time -= 3;
     incorrectText[nextQuestion].textContent = 'wrong';
   }
@@ -64,12 +62,9 @@ function checkAnswers (event) {
     }
   }, 1000);
 
-  console.log('button was clicked');
-  console.log(event.target.getAttribute('data-correct'));
 }
 //this timer will start once the user starts the game counting down from 25 until it reaches 0 then time is up
 function timerCountDown () {
-  console.log('countdown!!!')
   if (time > 0) {
     timerCounter.innerHTML = time--
   } else {
@@ -82,7 +77,6 @@ function submitScore (event) {
   event.preventDefault();
   let initials = event.target[0].value;
   // 1. AB - 22
-  console.log(initials)
   let scoreText = localStorage.length + 1 + '. ' + initials + ' - ' + score
   localStorage.setItem(localStorage.length, scoreText);
 
