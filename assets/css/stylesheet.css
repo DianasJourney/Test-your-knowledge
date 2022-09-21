@@ -18,7 +18,7 @@ h1 {
     position: absolute;
     transform: translate(-50%, -50%);
     left: 60%;
-    top: 27%;
+    top: 20%;
     font-size: 20px;
     display: flex;
     display: none;
@@ -149,9 +149,6 @@ footer{
     display: flex;
     justify-content: right;
     padding: 10px;
-}
-.nextbtn{
-  font-size: large;
 }
 
 .incorrect{
