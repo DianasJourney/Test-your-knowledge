@@ -22,7 +22,7 @@ The following link below will deploy to the webpage. Once users open the webpage
 
 https://dianasjourney.github.io/Test-your-knowledge/
 
-![a](https://user-images.githubusercontent.com/109758045/191437509-5dd9ae72-4486-4a4a-b85d-08f84b2f5a98.png)
+![801aa53e77cf10b63863aae2f7b69250](https://user-images.githubusercontent.com/109758045/191440178-59ab6ccf-891c-4be3-8b16-040e583fbc16.png)
 
 ## Credits
 Made by Diana Vu
