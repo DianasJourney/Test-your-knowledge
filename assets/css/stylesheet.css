@@ -192,12 +192,13 @@ footer{
     flex: 1 1 100%;
 }
 
-@media screen and (max-width: 720px){
- #infobox, .questions{
-  height: 90vh;
-  margin: 5vh auto;
+@media screen and (max-width: 694px){
+ #infobox, .info_title{
+  max-width: 480px;
+  height: 230px;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;  
+  flex-direction: column;
+  flex-wrap: wrap-reverse;  
 }
 }
+
