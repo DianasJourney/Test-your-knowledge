@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/stylesheet.css" />
+  </head>
+
+  <body>
+    <!--Start quiz-->
+    <div id="infobox">
+      <div class="info_title">Coding Challenge Quiz</div>
+      <!-- quiz info-->
+      <div class="info_list">
+        This quiz is to test your coding knowledge! You'll have 10 seconds to
+        answer each question, if the timer hits 0 then it will automatically be
+        the wrong answer. There are 5 questions in total, best of luck!
+      </div>
+      <div class="buttons">
+        <button id="play">Play</button>
+      </div>
+    </div>
+    <!--Questions Section-->
+    <header id="timerbox">
+      <div class="score">Score: <span id="points"></span></div>
+      <div class="timer">
+        <div class="timertext">Time Left:</div>
+        <div class="timersec">25</div>
+      </div>
+    </header>
+<!-- first question-->
+    <div class="questions">
+      <div class="optionlist">
+        <div class="titleq">What does HTML stand for?</div>
+        <div class="option" onclick="checkAnswers(event)" data-correct="false">
+          1. How To Make Lasagna
+        </div>
+        <div class="option" onclick="checkAnswers(event)" data-correct="false">
+          2. Hyper Text Means Lemon
+        </div>
+        <div class="option" onclick="checkAnswers(event)" data-correct="false">
+          3. Hyper Technology Makes Labels
+        </div>
+        <div class="option" onclick="checkAnswers(event)" data-correct="true">
+          4. Hyper Text Markup Language
+        </div>
+      </div>
+      <footer>
+        <span class="incorrect"></span>
+      </footer>
+    </div>
+<!-- second question-->
+ <div class="questions">
+      <div class="optionlist">
+        <div class="titleq">What does CSS stand for?</div>
+        <div class="option" onclick="checkAnswers(event)" data-correct="true">
+          1. Cascade Style Sheet
+        </div>
+        <div class="option" onclick="checkAnswers(event)" data-correct="false">
+          2. Cascade Sells Shells
+        </div>
+        <div class="option" onclick="checkAnswers(event)" data-correct="false">
+          3. Cascade Silly Ship
+        </div>
+        <div class="option" onclick="checkAnswers(event)" data-correct="false">
+          4. Cascade Sings Songs
+        </div>
+      </div>
+      <footer>
+        <span class="incorrect"></span>
+      </footer>
+    </div>
+<!--third questions-->
+    <div class="questions">
+      <div class="optionlist">
+        <div class="titleq">What does JS stand for?</div>
+        <div class="option" onclick="checkAnswers(event)" data-correct="false">
+          1. JavaScripters
+        </div>
+        <div class="option" onclick="checkAnswers(event)" data-correct="true">
+          2. JavaScript
+        </div>
+        <div class="option" onclick="checkAnswers(event)" data-correct="false">
+          3. JavaString
+        </div>
+        <div class="option" onclick="checkAnswers(event)" data-correct="false">
+          4. JavaStation
+        </div>
+      </div>
+      <footer>
+        <span class="incorrect"></span>
+      </footer>
+    </div>
+<!-- 4th question-->
+    <div class="questions">
+      <div class="optionlist">
+        <div class="titleq">Which one is not a data-type in JS?</div>
+        <div class="option" onclick="checkAnswers(event)" data-correct="false">
+          1. Object
+        </div>
+        <div class="option" onclick="checkAnswers(event)" data-correct="false">
+          2. String
+        </div>
+        <div class="option" onclick="checkAnswers(event)" data-correct="false">
+          3. Number
+        </div>
+        <div class="option" onclick="checkAnswers(event)" data-correct="true">
+          4. Bool
+        </div>
+      </div>
+      <footer>
+        <span class="incorrect"></span>
+      </footer>
+    </div>
+    <!-- this is the last series of question-->
+     <div class="questions">
+      <div class="optionlist">
+        <div class="titleq">How do you change a font color in CSS?</div>
+        <div class="option" onclick="checkAnswers(event)" data-correct="false">
+          1. font: 
+        </div>
+        <div class="option" onclick="checkAnswers(event)" data-correct="false">
+          2. font-family: 
+        </div>
+        <div class="option" onclick="checkAnswers(event)" data-correct="true">
+          3. color:
+        </div>
+        <div class="option" onclick="checkAnswers(event)" data-correct="false">
+          4. font-decoration:
+        </div>
+      </div>
+      <footer>
+        <span class="incorrect"></span>
+      </footer>
+    </div>
+<!-- highscore submit forms-->
+    <div id="GG">Game Over!!!
+        <span class="score">You got:  correct!</span>
+    </div>
+    <div id="form">
+        <label for="fname">Add yourself into HighScores:</label><br>
+        <input type="text" id="fname" name="fname" value="Name"><br>
+        <input type="submit" value="Submit">
+    </div>
+    <script src="./assets/js/quiz.js"></script>
+  </body>
+</html>
