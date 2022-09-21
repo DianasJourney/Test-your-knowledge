@@ -3,15 +3,18 @@ const startButton = document.getElementById('play')
 const quizSecEl = document.getElementsByClassName('questions')
 const infoSection = document.getElementById('infobox')
 const timerEl = document.getElementById('timerbox')
-let timerCounter = document.getElementsByClassName('timersec')[0]
 const scoreEl = document.getElementsByClassName('score')[1]
-let points = document.querySelector('#points')
-let incorrectText = document.querySelectorAll('.incorrect')
 const gameOver = document.getElementById('GG')
 const formInput = document.getElementById('form')
 const highscore = document.getElementById('highscore')
 const output = document.getElementById('output')
 const restartButton = document.getElementById('playAgain')
+
+let points = document.querySelector('#points')
+let incorrectText = document.querySelectorAll('.incorrect')
+let timerCounter = document.getElementsByClassName('timersec')[0]
+
+
 
 startButton.addEventListener('click', play)
 formInput.addEventListener('submit', submitScore)
